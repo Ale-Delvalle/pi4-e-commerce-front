@@ -27,7 +27,7 @@ export default function ProductCard({ product }: Props) {
   };
 
   return (
-    <div className="group rounded-xl shadow-sm ring-1 ring-neutral-200 hover:shadow-md hover:ring-green-300 transition-all bg-white flex flex-col overflow-hidden">
+    <div className="group rounded-xl shadow-sm ring-1 ring-border/80 hover:shadow-md hover:ring-emerald-500/50 transition-all bg-card text-card-foreground flex flex-col overflow-hidden">
       <Link href={`/products/${product.id}`} className="relative block aspect-square overflow-hidden">
         <Image
           src={product.imgUrl || "/placeholder-product.svg"}
@@ -46,7 +46,7 @@ export default function ProductCard({ product }: Props) {
       <div className="p-4 flex flex-col gap-2 flex-1">
         <div className="flex items-start justify-between gap-2">
           <Link href={`/products/${product.id}`}>
-            <h3 className="font-semibold text-neutral-900 leading-tight line-clamp-2 hover:text-primary transition-colors">
+            <h3 className="font-semibold text-foreground leading-tight line-clamp-2 hover:text-primary transition-colors">
               {product.name}
             </h3>
           </Link>

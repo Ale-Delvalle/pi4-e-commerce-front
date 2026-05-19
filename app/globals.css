@@ -1,3 +1,4 @@
+@import url('https://api.fontshare.com/v2/css?f[]=satoshi@300,400,500,700,900&display=swap');
 @import "tailwindcss";
 @import "tw-animate-css";
 @import "shadcn/tailwind.css";
@@ -7,7 +8,7 @@
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
-  --font-sans: var(--font-sans);
+  --font-sans: 'Satoshi', sans-serif;
   --font-mono: var(--font-geist-mono);
   --font-heading: var(--font-sans);
   --color-sidebar-ring: var(--sidebar-ring);
@@ -96,32 +97,32 @@
 }
 
 .dark {
-  --background: #052e16;
-  --foreground: #f0fdf4;
-  --card: #14532d;
-  --card-foreground: #f0fdf4;
-  --popover: #14532d;
-  --popover-foreground: #f0fdf4;
-  --primary: #22c55e;
-  --primary-foreground: #052e16;
-  --secondary: #166534;
-  --secondary-foreground: #f0fdf4;
-  --muted: #166534;
-  --muted-foreground: #dcfce7;
-  --accent: #166534;
-  --accent-foreground: #f0fdf4;
+  --background: #020b05;
+  --foreground: #ecfdf5;
+  --card: #09200f;
+  --card-foreground: #ecfdf5;
+  --popover: #09200f;
+  --popover-foreground: #ecfdf5;
+  --primary: #10b981;
+  --primary-foreground: #020b05;
+  --secondary: #0b2713;
+  --secondary-foreground: #ecfdf5;
+  --muted: #0b2713;
+  --muted-foreground: #a7f3d0;
+  --accent: #0f391b;
+  --accent-foreground: #ecfdf5;
   --destructive: oklch(0.704 0.191 22.216);
-  --border: oklch(1 0 0 / 10%);
-  --input: oklch(1 0 0 / 15%);
-  --ring: #22c55e;
-  --sidebar: #14532d;
-  --sidebar-foreground: #f0fdf4;
-  --sidebar-primary: #22c55e;
-  --sidebar-primary-foreground: #052e16;
-  --sidebar-accent: #166534;
-  --sidebar-accent-foreground: #f0fdf4;
-  --sidebar-border: oklch(1 0 0 / 10%);
-  --sidebar-ring: #22c55e;
+  --border: rgba(16, 185, 129, 0.15);
+  --input: rgba(16, 185, 129, 0.15);
+  --ring: #10b981;
+  --sidebar: #05160a;
+  --sidebar-foreground: #ecfdf5;
+  --sidebar-primary: #10b981;
+  --sidebar-primary-foreground: #020b05;
+  --sidebar-accent: #0b2713;
+  --sidebar-accent-foreground: #ecfdf5;
+  --sidebar-border: rgba(16, 185, 129, 0.15);
+  --sidebar-ring: #10b981;
   --chart-1: oklch(0.87 0 0);
   --chart-2: oklch(0.556 0 0);
   --chart-3: oklch(0.439 0 0);
