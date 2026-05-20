@@ -8,7 +8,7 @@ export const authApi = {
     return data;
   },
 
-  signup: async (userData: Omit<RegisterInput, "confirmPassword">): Promise<Partial<User>> => {
+  signup: async (userData: RegisterInput): Promise<Partial<User>> => {
     const { data } = await apiClient.post<Partial<User>>("/auth/signup", userData);
     return data;
   },

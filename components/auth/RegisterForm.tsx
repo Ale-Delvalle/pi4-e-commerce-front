@@ -25,9 +25,7 @@ export default function RegisterForm() {
 
   const onSubmit = async (data: Record<string, unknown>) => {
     try {
-      const { confirmPassword: _c, ...payload } = data;
-      void _c;
-      await authApi.signup(payload as Parameters<typeof authApi.signup>[0]);
+      await authApi.signup(data as any);
       toast.success("Cuenta creada. ¡Ya podés iniciar sesión!");
       router.push("/auth/login");
     } catch (err) {
