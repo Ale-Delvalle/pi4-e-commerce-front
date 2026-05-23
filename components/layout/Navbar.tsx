@@ -1,7 +1,7 @@
 "use client";
 
 import Link from "next/link";
-import { ShoppingCart, Search, User, LogOut, LayoutDashboard, Menu } from "lucide-react";
+import { ShoppingCart, Search, User, LogOut, LayoutDashboard, Menu, Sun, Moon } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import { Input } from "@/components/ui/input";
@@ -19,12 +19,14 @@ import { useUIStore } from "@/stores/ui.store";
 import { useAuthStore } from "@/stores/auth.store";
 import { useRouter } from "next/navigation";
 import { useState, useEffect } from "react";
+import { useTheme } from "next-themes";
 
 export default function Navbar() {
   const totalItems = useCartStore(selectTotalItems);
   const openCart = useUIStore((s) => s.openCart);
   const { user, isAuthenticated, clearSession } = useAuthStore();
   const router = useRouter();
+  const { theme, setTheme } = useTheme();
   const [search, setSearch] = useState("");
   const [mobileOpen, setMobileOpen] = useState(false);
   const [mounted, setMounted] = useState(false);
@@ -80,6 +82,23 @@ export default function Navbar() {
         </form>
 
         <div className="flex items-center gap-2 ml-auto">
+          {/* Theme Toggle */}
+          {mounted && (
+            <Button
+              variant="ghost"
+              size="icon"
+              className="text-foreground hover:bg-muted dark:text-emerald-400 dark:hover:bg-emerald-950/60"
+              onClick={() => setTheme(theme === "dark" ? "light" : "dark")}
+              aria-label="Alternar modo oscuro"
+            >
+              {theme === "dark" ? (
+                <Sun className="h-5 w-5 text-yellow-500 fill-current" />
+              ) : (
+                <Moon className="h-5 w-5 text-emerald-600 fill-current" />
+              )}
+            </Button>
+          )}
+
           {/* Cart */}
           <Button
             variant="ghost"

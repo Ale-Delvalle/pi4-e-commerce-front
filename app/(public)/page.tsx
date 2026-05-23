@@ -28,6 +28,7 @@ import ProductCard from "@/components/product/ProductCard";
 import { ProductGridSkeleton } from "@/components/product/ProductGrid";
 import { useProducts } from "@/lib/queries/useProducts";
 import { useCategories } from "@/lib/queries/useCategories";
+import { useAuthStore } from "@/stores/auth.store";
 
 // Propuestas de valor mejoradas
 const VALUE_PROPS = [
@@ -112,7 +113,7 @@ function getCategoryIcon(name: string) {
 export default function HomePage() {
   const { data: products, isLoading: loadingProducts } = useProducts();
   const { data: categories, isLoading: loadingCats } = useCategories();
-  const { theme, setTheme } = useTheme();
+  const { isAuthenticated } = useAuthStore();
   
   // Estado para prevenir errores de hidratación (hydration mismatch) en SSR
   const [mounted, setMounted] = useState(false);
@@ -160,14 +161,25 @@ export default function HomePage() {
                 Explorar productos <ArrowRight className="h-5 w-5" />
               </ButtonLink>
               
-              <ButtonLink 
-                href="/auth/register" 
-                size="lg" 
-                variant="outline" 
-                className="border-emerald-600/80 text-white hover:bg-white/10 active:bg-white/20 text-base px-8 py-6 rounded-xl backdrop-blur-sm transition-all duration-200"
-              >
-                Crear cuenta gratis
-              </ButtonLink>
+              {mounted && isAuthenticated ? (
+                <ButtonLink 
+                  href="/profile" 
+                  size="lg" 
+                  variant="outline" 
+                  className="border-white/20 bg-white/5 text-white hover:bg-white/10 active:bg-white/20 text-base px-8 py-6 rounded-xl backdrop-blur-sm transition-all duration-200"
+                >
+                  Mi perfil
+                </ButtonLink>
+              ) : (
+                <ButtonLink 
+                  href="/auth/register" 
+                  size="lg" 
+                  variant="outline" 
+                  className="border-white/20 bg-white/5 text-white hover:bg-white/10 active:bg-white/20 text-base px-8 py-6 rounded-xl backdrop-blur-sm transition-all duration-200"
+                >
+                  Crear cuenta gratis
+                </ButtonLink>
+              )}
             </div>
 
             {/* Testimonio / Social Proof Corto */}
@@ -410,20 +422,6 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* Botón Flotante para Alternar Modo Claro/Oscuro */}
-      {mounted && (
-        <button
-          onClick={() => setTheme(theme === "dark" ? "light" : "dark")}
-          className="fixed bottom-6 right-6 z-50 bg-emerald-600 hover:bg-emerald-500 dark:bg-emerald-500 dark:hover:bg-emerald-400 text-white p-4 rounded-full shadow-2xl hover:scale-110 active:scale-95 transition-all duration-200 cursor-pointer"
-          aria-label="Alternar modo oscuro"
-        >
-          {theme === "dark" ? (
-            <Sun className="h-6 w-6 text-yellow-100 fill-current" />
-          ) : (
-            <Moon className="h-6 w-6 text-emerald-100 fill-current" />
-          )}
-        </button>
-      )}
     </div>
   );
 }

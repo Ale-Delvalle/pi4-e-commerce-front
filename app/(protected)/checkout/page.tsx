@@ -54,9 +54,9 @@ export default function CheckoutPage() {
 
   return (
     <div>
-      <h1 className="text-3xl font-bold text-neutral-900 mb-8">Confirmar compra</h1>
+      <h1 className="text-3xl font-bold text-foreground mb-8">Confirmar compra</h1>
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
-        <div className="bg-white rounded-xl ring-1 ring-neutral-200 p-6">
+        <div className="bg-white dark:bg-card rounded-xl ring-1 ring-neutral-200 dark:ring-border p-6">
           <h2 className="font-semibold text-lg mb-4">Resumen de productos</h2>
           <div className="divide-y">
             {items.map(({ product, quantity }) => (
@@ -82,7 +82,7 @@ export default function CheckoutPage() {
           </div>
         </div>
 
-        <div className="bg-white rounded-xl ring-1 ring-neutral-200 p-6 h-fit sticky top-20">
+        <div className="bg-white dark:bg-card rounded-xl ring-1 ring-neutral-200 dark:ring-border p-6 h-fit sticky top-20">
           <h2 className="font-semibold text-lg mb-4">Total de la orden</h2>
           <div className="space-y-3">
             {items.map(({ product, quantity }) => (
