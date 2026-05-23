@@ -51,7 +51,7 @@ function CatalogContent() {
       <div className="flex flex-col lg:flex-row gap-8">
         {/* Sidebar Filters */}
         <aside className="lg:w-56 shrink-0">
-          <div className="bg-card text-card-foreground rounded-xl p-4 ring-1 ring-border sticky top-20">
+          <div className="bg-white dark:bg-card text-card-foreground rounded-xl p-4 ring-1 ring-neutral-200 dark:ring-border sticky top-20">
             <div className="flex items-center justify-between mb-4">
               <h3 className="font-semibold flex items-center gap-2">
                 <SlidersHorizontal className="h-4 w-4" /> Filtros
