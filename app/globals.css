@@ -62,9 +62,9 @@
 }
 
 :root {
-  --background: #f0fdf4;
+  --background: #ffffff;
   --foreground: #171717;
-  --card: #ffffff;
+  --card: #f0fdf4;
   --card-foreground: #171717;
   --popover: #ffffff;
   --popover-foreground: #171717;

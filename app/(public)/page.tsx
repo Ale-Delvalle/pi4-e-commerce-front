@@ -250,10 +250,11 @@ export default function HomePage() {
       </section>
 
       {/* 2. Categorías Section (Tarjetas Interactivas con Hovers Modernos) */}
-      <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <section className="w-full bg-verde-100 dark:bg-emerald-950/20 py-14 px-4 sm:px-6 lg:px-8">
+        <div className="max-w-7xl mx-auto">
         <div className="flex flex-col md:flex-row md:items-end justify-between mb-10 gap-4">
           <div className="text-left">
-            <div className="inline-flex items-center gap-1.5 bg-emerald-50 dark:bg-emerald-950/40 border border-emerald-200 dark:border-emerald-800/60 text-emerald-700 dark:text-emerald-300 rounded-full px-3 py-1 text-xs font-semibold mb-3">
+            <div className="inline-flex items-center gap-1.5 bg-white/80 dark:bg-emerald-950/40 border border-verde-500/30 dark:border-emerald-800/60 text-emerald-700 dark:text-emerald-300 rounded-full px-3 py-1 text-xs font-semibold mb-3">
               <Sparkles className="h-3 w-3" /> Categorías Populares
             </div>
             <h2 className="text-3xl font-extrabold text-foreground tracking-tight">
@@ -304,6 +305,7 @@ export default function HomePage() {
             })}
           </div>
         )}
+        </div>
       </section>
 
       {/* 3. Productos Destacados (Con Fallback de Mocks Elegantes si no hay Base de Datos) */}
@@ -338,7 +340,7 @@ export default function HomePage() {
       </section>
 
       {/* 4. Propuestas de Valor (Bento Layout Glassmorphic) */}
-      <section className="bg-emerald-50/20 dark:bg-emerald-950/20 border-t border-b border-emerald-100/50 dark:border-emerald-900/30 py-16 px-4 sm:px-6 lg:px-8">
+      <section className="bg-verde-100 dark:bg-emerald-950/20 border-t border-b border-verde-500/20 dark:border-emerald-900/30 py-16 px-4 sm:px-6 lg:px-8">
         <div className="max-w-7xl mx-auto">
           <div className="text-center max-w-2xl mx-auto mb-12 space-y-3">
             <h2 className="text-3xl font-extrabold text-foreground tracking-tight">
