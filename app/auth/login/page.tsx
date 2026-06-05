@@ -3,7 +3,7 @@ import { Suspense } from "react";
 import LoginForm from "@/components/auth/LoginForm";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 
-export const metadata = { title: "Iniciar sesión — Pi4 Market" };
+export const metadata = { title: "Iniciar sesión — Astro Tech" };
 
 export default function LoginPage() {
   return (
@@ -11,7 +11,7 @@ export default function LoginPage() {
       <Card className="w-full max-w-md shadow-2xl">
         <CardHeader className="text-center">
           <div className="text-4xl mb-2">🌿</div>
-          <CardTitle className="text-2xl">Pi4 Market</CardTitle>
+          <CardTitle className="text-2xl">Astro Tech</CardTitle>
           <CardDescription>Iniciá sesión en tu cuenta</CardDescription>
         </CardHeader>
         <CardContent>

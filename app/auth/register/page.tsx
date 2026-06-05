@@ -2,7 +2,7 @@ import Link from "next/link";
 import RegisterForm from "@/components/auth/RegisterForm";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 
-export const metadata = { title: "Registrarse — Pi4 Market" };
+export const metadata = { title: "Registrarse — Astro Tech" };
 
 export default function RegisterPage() {
   return (

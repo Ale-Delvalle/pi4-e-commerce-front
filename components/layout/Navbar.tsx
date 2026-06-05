@@ -64,7 +64,7 @@ export default function Navbar() {
       <div className="max-w-7xl mx-auto px-4 h-16 flex items-center gap-4">
         {/* Logo */}
         <Link href="/" className="font-extrabold text-xl whitespace-nowrap shrink-0 bg-gradient-to-r from-emerald-600 to-green-500 dark:from-emerald-400 dark:to-green-300 bg-clip-text text-transparent">
-          Pi4 Market
+          Astro Tech
         </Link>
 
         {/* Search */}
@@ -162,7 +162,7 @@ export default function Navbar() {
             <SheetContent side="left" className="w-64 bg-card border-r border-border">
               <nav className="flex flex-col gap-4 mt-6">
                 <Link href="/" onClick={() => setMobileOpen(false)} className="font-extrabold text-lg text-emerald-600 dark:text-emerald-400">
-                  Pi4 Market
+                  Astro Tech
                 </Link>
                 <form onSubmit={(e) => { handleSearch(e); setMobileOpen(false); }}>
                   <div className="relative">

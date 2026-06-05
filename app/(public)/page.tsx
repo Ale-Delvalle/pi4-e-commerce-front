@@ -141,7 +141,7 @@ export default function HomePage() {
                 <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75"></span>
                 <span className="relative inline-flex rounded-full h-2 w-2 bg-emerald-500"></span>
               </span>
-              🌿 Bienvenidos a Pi4 Market
+              🌿 Bienvenidos a Astro Tech
             </div>
             
             <h1 className="text-4xl sm:text-5xl lg:text-6xl font-extrabold leading-[1.1] tracking-tight">
@@ -344,7 +344,7 @@ export default function HomePage() {
         <div className="max-w-7xl mx-auto">
           <div className="text-center max-w-2xl mx-auto mb-12 space-y-3">
             <h2 className="text-3xl font-extrabold text-foreground tracking-tight">
-              ¿Por qué elegir Pi4 Market?
+              ¿Por qué elegir Astro Tech?
             </h2>
             <p className="text-muted-foreground">
               Nos enfocamos en brindar la mejor experiencia de compra en cada paso del proceso.

@@ -5,7 +5,7 @@ export default function Footer() {
     <footer className="bg-emerald-950 dark:bg-[#020b05] text-emerald-100 border-t border-emerald-900/50 transition-colors duration-300 mt-auto">
       <div className="max-w-7xl mx-auto px-4 py-12 grid grid-cols-1 sm:grid-cols-3 gap-8">
         <div className="space-y-3">
-          <h3 className="font-extrabold text-white text-xl">Pi4 Market</h3>
+          <h3 className="font-extrabold text-white text-xl">Astro Tech</h3>
           <p className="text-sm text-emerald-300/80 leading-relaxed max-w-xs">
             Tu tienda online de confianza. Ofreciendo los mejores productos premium al precio más conveniente.
           </p>
@@ -27,7 +27,7 @@ export default function Footer() {
         </div>
       </div>
       <div className="border-t border-emerald-900/40 py-6 text-center text-xs text-emerald-400/60">
-        © {new Date().getFullYear()} Pi4 Market. Todos los derechos reservados.
+        © {new Date().getFullYear()} Astro Tech. Todos los derechos reservados.
       </div>
     </footer>
   );

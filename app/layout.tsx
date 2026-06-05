@@ -19,8 +19,8 @@ const inter = Inter({
 });
 
 export const metadata: Metadata = {
-  title: "Pi4 Market — Tu tienda online",
-  description: "Descubrí los mejores productos al mejor precio en Pi4 Market.",
+  title: "Astro Tech — Tu tienda online",
+  description: "Descubrí los mejores productos al mejor precio en Astro Tech.",
 };
 
 export default function RootLayout({
