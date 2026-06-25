@@ -34,6 +34,7 @@ export interface User {
   country: string;
   city: string;
   address: string;
+  avatarUrl?: string;
   isAdmin: boolean;
   orders?: Order[];
 }

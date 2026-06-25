@@ -1,5 +1,6 @@
 "use client";
 
+import { useEffect, useMemo, useState } from "react";
 import { useAuthStore } from "@/stores/auth.store";
 import { useUser, useUpdateUser } from "@/lib/queries/useUsers";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
@@ -8,6 +9,7 @@ import { Button } from "@/components/ui/button";
 import { ButtonLink } from "@/components/ui/button-link";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
+import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 import LoadingSpinner from "@/components/shared/LoadingSpinner";
 import { useForm } from "react-hook-form";
 import { toast } from "sonner";
@@ -36,6 +38,35 @@ export default function ProfilePage() {
       address: fullUser?.address,
     },
   });
+
+  const [selectedPhoto, setSelectedPhoto] = useState<File | null>(null);
+  const [previewUrl, setPreviewUrl] = useState<string | null>(null);
+
+  const selectedPhotoLabel = useMemo(
+    () => selectedPhoto?.name ?? "Seleccionar archivo",
+    [selectedPhoto]
+  );
+
+  useEffect(() => {
+    if (!selectedPhoto) {
+      setPreviewUrl(null);
+      return;
+    }
+
+    const url = URL.createObjectURL(selectedPhoto);
+    setPreviewUrl(url);
+
+    return () => {
+      URL.revokeObjectURL(url);
+    };
+  }, [selectedPhoto]);
+
+  const onPhotoChange = (event: React.ChangeEvent<HTMLInputElement>) => {
+    const file = event.target.files?.[0] ?? null;
+    setSelectedPhoto(file);
+  };
+
+  const currentPhotoUrl = previewUrl ?? fullUser?.avatarUrl ?? undefined;
 
   const onSubmit = async (data: UpdateUserInput) => {
     try {
@@ -75,6 +106,46 @@ export default function ProfilePage() {
             </CardHeader>
             <CardContent>
               <form onSubmit={handleSubmit(onSubmit)} className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                <div className="sm:col-span-2 rounded-2xl border border-dashed border-border bg-muted p-4">
+                  <div className="flex flex-col gap-4 sm:flex-row sm:items-center">
+                    <Avatar size="lg" className="border border-border">
+                      {currentPhotoUrl ? (
+                        <AvatarImage src={currentPhotoUrl} alt="Foto de perfil" />
+                      ) : (
+                        <AvatarFallback>
+                          {fullUser?.name?.trim()?.[0] ?? "U"}
+                        </AvatarFallback>
+                      )}
+                    </Avatar>
+                    <div className="flex-1 space-y-2">
+                      <div>
+                        <p className="text-sm font-semibold text-foreground">Foto de perfil</p>
+                        <p className="text-sm text-muted-foreground">
+                          Selecciona una imagen para previsualizarla. Esta acción es solo de diseño por ahora.
+                        </p>
+                      </div>
+                      <div className="grid gap-2 sm:grid-cols-[1fr_auto] items-center">
+                        <input
+                          id="profile-photo"
+                          type="file"
+                          accept="image/*"
+                          className="sr-only"
+                          onChange={onPhotoChange}
+                        />
+                        <label
+                          htmlFor="profile-photo"
+                          className="inline-flex w-full cursor-pointer items-center justify-between rounded-lg border border-border bg-background px-4 py-3 text-sm font-medium text-foreground shadow-sm transition hover:bg-muted sm:w-auto"
+                        >
+                          <span>{selectedPhotoLabel}</span>
+                          <span className="text-primary">Cambiar</span>
+                        </label>
+                        <p className="text-xs text-muted-foreground sm:col-span-2">
+                          Formatos admitidos: JPG, PNG. La foto no se enviará al backend en esta versión.
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
                 <div className="space-y-1">
                   <Label>Nombre</Label>
                   <Input {...register("name")} />
