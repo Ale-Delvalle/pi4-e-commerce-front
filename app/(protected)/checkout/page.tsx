@@ -31,7 +31,12 @@ export default function CheckoutPage() {
       {
         onSuccess: (order) => {
           clearCart();
-          router.push(`/orders/${order.id}`);
+          const resolvedOrder = Array.isArray(order) ? order[0] : order;
+          if (resolvedOrder && resolvedOrder.id) {
+            router.push(`/orders/${resolvedOrder.id}`);
+          } else {
+            toast.error("Error al obtener la información de la orden.");
+          }
         },
         onError: () => {
           toast.error("Error al crear la orden. Intentá nuevamente.");
