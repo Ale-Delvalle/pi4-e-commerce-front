@@ -7,7 +7,7 @@ export const metadata = { title: "Iniciar sesión — Astro Tech" };
 
 export default function LoginPage() {
   return (
-    <div className="min-h-screen bg-gradient-to-br from-green-950 to-green-900 flex items-center justify-center p-4">
+    <div className="flex-1 bg-gradient-to-br from-green-950 to-green-900 flex items-center justify-center p-4">
       <Card className="w-full max-w-md shadow-2xl">
         <CardHeader className="text-center">
           <div className="text-4xl mb-2">🌿</div>
