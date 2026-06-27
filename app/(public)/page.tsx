@@ -255,10 +255,10 @@ export default function HomePage() {
         <div className="flex flex-col md:flex-row md:items-end justify-between mb-10 gap-4">
           <div className="text-left">
             <div className="inline-flex items-center gap-1.5 bg-white/80 dark:bg-emerald-950/40 border border-verde-500/30 dark:border-emerald-800/60 text-emerald-700 dark:text-emerald-300 rounded-full px-3 py-1 text-xs font-semibold mb-3">
-              <Sparkles className="h-3 w-3" /> Categorías Populares
+              <Sparkles className="h-3 w-3" /> Categorías populares
             </div>
             <h2 className="text-3xl font-extrabold text-foreground tracking-tight">
-              Explorá por departamentos
+              Explorá por categorías
             </h2>
           </div>
         </div>
