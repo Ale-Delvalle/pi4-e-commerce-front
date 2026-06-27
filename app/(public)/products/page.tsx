@@ -17,7 +17,9 @@ function CatalogContent() {
   const searchParams = useSearchParams();
   const router = useRouter();
   const [search, setSearch] = useState(searchParams.get("search") || "");
-  const [selectedCategories, setSelectedCategories] = useState<string[]>([]);
+  const [selectedCategories, setSelectedCategories] = useState<string[]>(
+    searchParams.get("category") ? [searchParams.get("category")!] : []
+  );
 
   const { data: allProducts, isLoading } = useProducts();
   const { data: categories } = useCategories();
