@@ -155,10 +155,6 @@ export default function ProfilePage() {
                   <Input value={fullUser?.email ?? ""} disabled className="bg-neutral-50" />
                 </div>
                 <div className="space-y-1">
-                  <Label>Teléfono</Label>
-                  <Input type="number" {...register("phone")} />
-                </div>
-                <div className="space-y-1">
                   <Label>País</Label>
                   <Input {...register("country")} />
                 </div>
@@ -166,9 +162,13 @@ export default function ProfilePage() {
                   <Label>Ciudad</Label>
                   <Input {...register("city")} />
                 </div>
-                <div className="space-y-1 sm:col-span-2">
+                <div className="space-y-1">
                   <Label>Dirección</Label>
                   <Input {...register("address")} />
+                </div>
+                <div className="space-y-1">
+                  <Label>Teléfono</Label>
+                  <Input type="number" {...register("phone")} />
                 </div>
                 <div className="sm:col-span-2">
                   <Button type="submit" className="bg-primary hover:bg-green-700 text-white" disabled={isPending}>
